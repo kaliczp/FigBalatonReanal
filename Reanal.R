@@ -1,3 +1,6 @@
+library(zoo)
+library(ggplot2)
+Bal.zoo <- read.zoo("Balaton.txt", head=T)
 Max.scale <- 2000
 .expressions <- c("Precipitation~mm", "Temperature *~degree*C")
 y_axis_expressions <- parse(text = .expressions)
