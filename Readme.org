@@ -1,0 +1,4 @@
+#+TITLE: Timeseries with ggplot with triple axes
+
+Yearly mean temperature, precipitation and water level in the same
+ggplot graphics.
