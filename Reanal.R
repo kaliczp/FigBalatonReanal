@@ -17,3 +17,5 @@ ggplot(Bal.xts, aes(x=Index, y=Prec)) +
              label=c("Precipitation [mm]","Temperature [C]"),
              geom="text", angle=90, hjust=0.5, size=4,
              colour=c("blue", "red"))
+
+ggsave("reanal.pdf")
