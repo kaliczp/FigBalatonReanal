@@ -2,7 +2,7 @@ library(zoo)
 library(ggplot2)
 Bal.zoo <- read.zoo("Balaton.txt", head=T)
 Max.scale <- 2000
-.expressions <- c("Precipitation~mm", "Temperature *~degree*C")
+.expressions <- c('Precipitation~group("[",mm,"]")', 'Temperature~group("[",degree*C,"]")')
 y_axis_expressions <- parse(text = .expressions)
 
 ggplot(Bal.zoo, aes(x=Index, y=Prec)) +
@@ -10,7 +10,7 @@ ggplot(Bal.zoo, aes(x=Index, y=Prec)) +
     labs(x="") +
     scale_y_reverse(name = "", breaks = c(0,500,1000, 1500, 2000),
                     labels = c(0, 500,1000,10,5),
-                    sec.axis = sec_axis(~.*10, name = "Water level cm",
+                    sec.axis = sec_axis(~.*10, name = parse(text = 'Water~level~group("[",cm,"]")'),
                                         breaks = c(5000,10000,15000,20000),
                                         labels = c(300,200,100,0))
                     ) +
