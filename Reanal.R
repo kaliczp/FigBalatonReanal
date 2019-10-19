@@ -16,7 +16,7 @@ ggplot(Bal.xts, aes(x=Index, y=Prec)) +
     geom_line(aes(y = (Max.scale - WLev*10))) +
     coord_cartesian(xlim=range(index(Bal.xts)) + c(310,-310),
                     ylim= c(Max.scale,0) + c(-80, 80), clip = 'off') +
-    annotate(min(index(Bal.xts)) - 1000, y=c(500,1750),
+    annotate(min(index(Bal.xts)) - 1000, y=c(500,1700),
              label=y_axis_expressions,
              geom="text", angle=90, hjust=0.5, size=4,
              colour=c("blue", "red"))
